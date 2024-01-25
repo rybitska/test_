@@ -10,8 +10,13 @@ resource "aws_instance" "ethereum_instance" {
   
   user_data = <<-EOF
               #!/bin/bash
+              # sudo apt-get install
+              # sudo apt-get updates
+              # sudo-aptrepository ppa:ethereum/ethereum 
+              # sudo apt-get update
               # Install Ethereum client and start syncing
-              # Add any necessary setup or configuration here
+              # sudo apt-get install ethereum 
+              # eth.syncing
               EOF
 }
 
