@@ -95,6 +95,7 @@ resource "null_resource" "docker_packaging" {
 
   provisioner "local-exec" {
     command = <<EOF
+        #!/bin/bash
 	      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${data.aws_caller_identity.current.account_id}.dkr.ecr.us-east-1.amazonaws.com
         docker pull ethereum/client-go:stable
         imageID=`docker images -q ethereum/client-go:stable`
