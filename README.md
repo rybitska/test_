@@ -1,13 +1,13 @@
 # technical_task
 
-# Step 1
+## Step 1
 # copy repo
 
-# Step 2 
+## Step 2 
 # provide AWS credentials
 
-# Step 3
+## Step 3
 # in terminal run terraform init
 
-# Step 4 
+## Step 4 
 # terraform apply --auto-approve 
