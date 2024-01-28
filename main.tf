@@ -165,6 +165,7 @@ resource "aws_security_group" "security-group-geth" {
     from_port   = 30303
     to_port     = 30303
     protocol    = "udp"
+    description = "Ethereum geth node p2p port"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -179,7 +180,30 @@ resource "aws_security_group" "security-group-geth" {
     from_port   = 8545  
     to_port     = 8545
     protocol    = "tcp"
+    description = "web3 http port"
     cidr_blocks = ["0.0.0.0/0"]  
+  }
+
+  ingress {
+    from_port   = 8546
+    to_port     = 8546
+    protocol    = "tcp"
+    description = "web3 websocket port"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
   }
 
   egress {
@@ -189,3 +213,10 @@ resource "aws_security_group" "security-group-geth" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+root_block_device = {
+    volume_type = "io1"
+    iops = "32000"
+    volume_size = var.volume_size
+  }
+
