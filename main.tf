@@ -151,14 +151,14 @@ resource "aws_vpc" "vpc-geth" {
 }
 
 resource "aws_subnet" "subnet-geth" {
-  vpc_id = aws_vpc.vpc_geth.id
+  vpc_id = aws_vpc.vpc-geth.id
   cidr_block = "10.0.1.0/24"
   availability_zone = "us-east-1a"
 }
 
 resource "aws_security_group" "security-group-geth" {
   name        = "security-group-geth"
-  vpc_id      = aws_vpc.vpc_geth.id
+  vpc_id      = aws_vpc.vpc-geth.id
 
   ingress {
     from_port   = 30303
