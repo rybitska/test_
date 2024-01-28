@@ -135,7 +135,7 @@ resource "aws_instance" "geth" {
               sudo usermod -a -G docker ec2-user
               touch file.txt
 
-              aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${data.aws_caller_identity.current.account_id}.dkr.ecr.us-east-1.amazonaws.com
+              aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-password ${data.aws_caller_identity.current.account_id}.dkr.ecr.us-east-1.amazonaws.com
 
               echo "logged into aws and docker" >> file.txt
 
