@@ -1,13 +1,22 @@
 # technical_task
 
 ## Step 1
-# copy repo
+### copy repo 
+```
+git clone git@github.com:rybitska/test_.git
+```
 
 ## Step 2 
-# provide AWS credentials
+### provide AWS credentials
 
 ## Step 3
-# in terminal run terraform init
+### in terminal run 
+```
+terraform init
+```
 
 ## Step 4 
-# terraform apply --auto-approve 
+### next run 
+```
+terraform apply --auto-approve
+``` 
